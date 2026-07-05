@@ -1,0 +1,58 @@
+{
+  "name": "don-aji-pro",
+  "version": "1.0.0",
+  "description": "Sistema de Facturación - Don Ají Especias y Condimentos",
+  "main": "main.js",
+  "author": "Adahia Software Pro",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.adahia.donaji",
+    "productName": "Don Ají PRO",
+    "copyright": "© 2026 Adahia Software Pro",
+    "win": {
+      "target": "nsis",
+      "icon": "favicon.ico",
+      "signingHashAlgorithms": null,
+      "sign": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "favicon.ico",
+      "installerHeaderIcon": "favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Don Ají PRO"
+    },
+    "files": [
+      "**/*",
+      "!generar_licencia_donaji.html",
+      "!activacion.html",
+      "!debug.bat",
+      "!fix_*.bat",
+      "!inicio.bat",
+      "!compilar.bat",
+      "!**/*.md",
+      "!installer_output/",
+      "!donaji_setup.iss",
+      "!dist/"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "forceCodeSigning": false
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^9.6.0",
+    "electron-pos-printer": "^1.4.0",
+    "nodemailer": "^6.9.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}
